@@ -48,5 +48,16 @@ int main()
         board.reset();
     }
 
+    talossolver::sigil X({  {0, 0}, {1, 0}, {2, 0}, {3, 0}, {2, 1}, {4, 1}, 
+                            {2, 2}, {3, 3} });
+    board.take(X.get_cords(4, 4), 1);
+    board.print();
+    board.reset();
+
+    X.rotate();
+    board.take(X.get_cords(4, 4), 1);
+    board.print();
+    board.reset();
+
     return 0;
 }
