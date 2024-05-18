@@ -1,7 +1,7 @@
 #pragma once
 
+#include <array>
 #include <vector>
-#include <utility>
 
-typedef std::pair<unsigned int, unsigned int> coordinate;
+typedef std::array<unsigned int, 2> coordinate;
 typedef std::vector<coordinate> coordinates;

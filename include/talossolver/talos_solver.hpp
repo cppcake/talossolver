@@ -1,8 +1,8 @@
 #pragma once
 
 #include "types.hpp"
-#include "board.hpp"
-#include "sigil.hpp"
+#include "talossolver/board.hpp"
+#include "talossolver/sigil.hpp"
 
 namespace talossolver
 {
