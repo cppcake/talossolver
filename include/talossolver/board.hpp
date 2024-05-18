@@ -15,17 +15,17 @@ namespace talossolver
 
         // Check if coordinate is valid, such that the coordinate is within the
         // board. Does not check if the coordinate is free.
-        bool is_valid(const coordinate& cord);
+        const bool is_valid(const coordinate& cord);
 
         // Overload to check multiple coordinates at once
-        bool is_valid(const coordinates& cords);
+        const bool is_valid(const coordinates& cords);
 
         // Check if coordinate cord on the board is free. Does not check if
         // the coordinate is valid
-        bool is_free(const coordinate& cord);
+        const bool is_free(const coordinate& cord);
 
         // Overload to check multiple coordinates at once
-        bool is_free(const coordinates& cords);
+        const bool is_free(const coordinates& cords);
 
         // Take coordinate as id. Does not check if already taken or valid.
         void take(const coordinate& cord, unsigned int id);
@@ -36,7 +36,7 @@ namespace talossolver
         // Resets the board such that all tiles are free
         void reset();
 
-        void print();
+        const void print();
 
         private:
         // The board is represented as an n x m Matrix, the board_map.

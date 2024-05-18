@@ -4,6 +4,15 @@
 
 int main()
 {
-    talossolver::board board(4, 5);
+    talossolver::board board(10, 10);
+
+    talossolver::sigil I('I');
+    talossolver::sigil O('O');
+    talossolver::sigil T('T');
+    talossolver::sigil J('J');
+    talossolver::sigil L('L');
+    talossolver::sigil S('S');
+    talossolver::sigil Z('Z');
+
     return 0;
 }

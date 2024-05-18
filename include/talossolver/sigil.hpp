@@ -8,16 +8,22 @@ namespace talossolver
     {
         public:
         // Construct a sigil with given coordinates
-        sigil(const coordinates& cos_) : cos(cos_){};
+        sigil(const coordinates& cords_) : cords(cords_){};
+
+        // Construct a sigil from a template teromino
+        sigil(char sigil_id);
 
         // Return the coordinates associated with the sigil
-        coordinates get_cos(){return cos;}
+        const coordinates get_cords(){return cords;}
+
+        // Overload to return the coordinates but displaced by (x, y)
+        const coordinates get_cords(unsigned int x, unsigned int y);
 
         // Rotates the sigil by 90° clockwhise
         void rotate();
 
         private:
         // Represent the sigil as a vector of coordinates
-        coordinates cos;
+        coordinates cords;
     };
 }

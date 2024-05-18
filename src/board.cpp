@@ -5,7 +5,7 @@ namespace talossolver
 {
     // Check if coordinate is valid, such that the coordinate is within the
     // board. Does not check if the coordinate is free.
-    bool board::is_valid(const coordinate& cord)
+    const bool board::is_valid(const coordinate& cord)
     {
         if(cord[0] >= n) return false;
         if(cord[1] >= m) return false;
@@ -14,7 +14,7 @@ namespace talossolver
     }
 
     // Overload to check multiple coordinates at once
-    bool board::is_valid(const coordinates& cords)
+    const bool board::is_valid(const coordinates& cords)
     {
         for(const auto& cord : cords)
             if(!is_valid(cord)) return false;
@@ -24,13 +24,13 @@ namespace talossolver
 
     // Check if coordinate cord on the board is free. Does not check if
     // the coordinate is valid
-    bool board::is_free(const coordinate& cord)
+    const bool board::is_free(const coordinate& cord)
     {
         return !board_map[cord[0]][cord[1]];
     }
 
     // Overload to check multiple coordinates at once
-    bool board::is_free(const coordinates& cords)
+    const bool board::is_free(const coordinates& cords)
     {
         for(const auto& cord : cords)
             if(!is_free(cord)) return false;
@@ -61,13 +61,15 @@ namespace talossolver
         }
     }
 
-    void board::print()
+    const void board::print()
     {
-        for(unsigned int r = 0; r < n; r++)
+        for(unsigned int r = 0; r < board_map.size(); r++)
         {
-            for(unsigned int c = 0; c < m; c++)
-                std::cout << board_map[r][c] << " |";
+            std::cout << "| ";
+            for(unsigned int c = 0; c < board_map[r].size(); c++)
+                std::cout << board_map[r][c] << " | ";
             std::cout << std::endl;
         }
+        std::cout << std::endl;
     }
 }

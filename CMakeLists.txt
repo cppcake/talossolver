@@ -78,3 +78,6 @@ enable_testing()
 add_executable(test_board tests/test_board.cpp ${SRC_FILES})
 target_link_libraries(test_board GTest::gtest_main)
 gtest_discover_tests(test_board)
+
+#Declare test program test_sigil
+add_executable(test_sigil tests/test_sigil.cpp ${SRC_FILES})
