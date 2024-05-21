@@ -2,8 +2,9 @@
 
 namespace talossolver
 {
-    bool talos_solver::try_place(talossolver::board& board, talossolver::sigil& sigil, coordinate& cord, size_t id)
+    bool talos_solver::try_place(talossolver::board& board, talossolver::sigil& sigil, coordinate cord, size_t index)
     {
+        unsigned int id = index + 1;
         coordinates to_place = sigil.get_cords(cord[0], cord[1]);
         if(board.is_valid(to_place))
         {
@@ -21,7 +22,34 @@ namespace talossolver
 
     bool talos_solver::talos_solve(   talossolver::board& board, talossolver::sigils& sigils, size_t index)
     {
-        return true;
+        // Board already solved, return true
+        if(index >= sigils.size())
+            return true;
+
+        unsigned int n = board.size()[0];
+        unsigned int m = board.size()[1];
+
+        for(unsigned int i = 0; i < n; i++)
+        {
+            for(unsigned int j = 0; j < m; j++)
+            {
+                for(unsigned int k = 0; k < 4; k++)
+                {
+                    coordinate to_place = {i, j};
+                    if(try_place(board, sigils[index], to_place, index))
+                    {
+                        size_t new_index = index + 1;
+                        bool status = talos_solve(board, sigils, new_index);
+                        if(status)
+                            return true;
+                        board.free(sigils[index].get_cords(i, j));
+                    }
+                    sigils[index].rotate();
+                }
+            }
+        }
+
+        return false;
     }
 
 }

@@ -29,7 +29,7 @@ namespace talossolver
         // Returns true if succesful, otherwhise returns false.
         bool try_place(     talossolver::board& board,
                             talossolver::sigil& sigil,
-                            coordinate& cord,
-                            size_t id);
+                            coordinate cord,
+                            size_t index);
     };
 }
