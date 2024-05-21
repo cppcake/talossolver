@@ -13,21 +13,23 @@ namespace talossolver
     class talos_solver
     {
         public:
-        // Solves the talos puzzle for a board and a given set of sigils
-        bool talos_solve(   talossolver::board board,
-                            talossolver::sigils sigils);
+        // Solves the talos puzzle for a board and a given set of sigils.
+        // Check out the flowchart in the docs.
+        bool talos_solve(   talossolver::board& board,
+                            talossolver::sigils& sigils);
 
         private:
         // Solves the talos puzzle for a board and a given set of sigils.
-        // This Helperfunction is necessary for the recrusive part, see docs
-        bool talos_solve(   talossolver::board board,
-                            talossolver::sigils sigils,
+        // This Helperfunction is necessary for the recrusive part, see docs.
+        bool talos_solve(   talossolver::board& board,
+                            talossolver::sigils& sigils,
                             size_t index);
 
-        // Tries to place a sigil on coordinate cord of the board
-        // Returns true if succesful, otherwhise returns false
-        bool try_place(     talossolver::board board,
-                            talossolver::sigil sigil,
-                            coordinate cord);
+        // Tries to place a sigil on coordinate cord of the board.
+        // Returns true if succesful, otherwhise returns false.
+        bool try_place(     talossolver::board& board,
+                            talossolver::sigil& sigil,
+                            coordinate& cord,
+                            size_t id);
     };
 }
