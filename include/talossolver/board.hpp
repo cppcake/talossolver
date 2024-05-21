@@ -42,6 +42,8 @@ namespace talossolver
         // Resets the board such that all tiles are free
         void reset();
 
+        coordinate size();
+
         const void print();
 
         private:

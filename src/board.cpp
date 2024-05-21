@@ -67,6 +67,8 @@ namespace talossolver
         }
     }
 
+    coordinate board::size(){return {n, m};}
+
     const void board::print()
     {
         for(unsigned int r = 0; r < board_map.size(); r++)
