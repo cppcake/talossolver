@@ -30,6 +30,6 @@ namespace talossolver
         bool try_place(     talossolver::board& board,
                             talossolver::sigil& sigil,
                             coordinate cord,
-                            size_t index);
+                            size_t id);
     };
 }

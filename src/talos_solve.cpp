@@ -2,9 +2,8 @@
 
 namespace talossolver
 {
-    bool talos_solver::try_place(talossolver::board& board, talossolver::sigil& sigil, coordinate cord, size_t index)
+    bool talos_solver::try_place(talossolver::board& board, talossolver::sigil& sigil, coordinate cord, size_t id)
     {
-        unsigned int id = index + 1;
         coordinates to_place = sigil.get_cords(cord[0], cord[1]);
         if(board.is_valid(to_place))
         {
@@ -28,6 +27,7 @@ namespace talossolver
 
         unsigned int n = board.size()[0];
         unsigned int m = board.size()[1];
+        size_t new_index = index + 1;
 
         for(unsigned int i = 0; i < n; i++)
         {
@@ -36,9 +36,8 @@ namespace talossolver
                 for(unsigned int k = 0; k < 4; k++)
                 {
                     coordinate to_place = {i, j};
-                    if(try_place(board, sigils[index], to_place, index))
+                    if(try_place(board, sigils[index], to_place, new_index))
                     {
-                        size_t new_index = index + 1;
                         bool status = talos_solve(board, sigils, new_index);
                         if(status)
                             return true;

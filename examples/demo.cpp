@@ -6,7 +6,7 @@
 
 int main()
 {
-    talossolver::board board(6, 4);
+    talossolver::board board(7, 8);
 
     talossolver::sigil I('I');
     talossolver::sigil O('O');
@@ -16,19 +16,17 @@ int main()
     talossolver::sigil S('S');
     talossolver::sigil Z('Z');
 
-    std::vector<talossolver::sigil> tetrominos = {I, O, T, T, L, Z};
+    std::vector<talossolver::sigil> tetrominos = {O, O, O, O, I, I, T, T, T, T, S, Z, L, J};
 
     talossolver::talos_solver solver;
     if(solver.talos_solve(board, tetrominos) == true)
     {
-        std::cout << "True!" << std::endl;
+        std::cout << "The puzzle can be solved! Here is the solution:" << std::endl;
+        board.print();
     }
     else
     {
-        std::cout << "False!" << std::endl;
+        std::cout << "The puzzle can't be solved! :(" << std::endl;
     }
-
-    board.print();
-
     return 0;
 }
