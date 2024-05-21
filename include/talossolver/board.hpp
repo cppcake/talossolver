@@ -33,6 +33,12 @@ namespace talossolver
         // Overload to take multiple coordinates at once.
         void take(const coordinates& cords, unsigned int id);
 
+        // Free a coordinate. Equal to calling take with id=0
+        void free(const coordinate& cord);
+
+        // Overload to free multiple coordinates at once.
+        void free(const coordinates& cords);
+
         // Resets the board such that all tiles are free
         void reset();
 

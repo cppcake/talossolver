@@ -51,6 +51,12 @@ namespace talossolver
             take(cord, id);
     }
 
+    // Free a coordinate. Equal to calling take with id=0
+    void board::free(const coordinate& cord){take(cord, 0);}
+
+    // Overload to free multiple coordinates at once.
+    void board::free(const coordinates& cords){take(cords, 0);}
+
     // Resets the board such that all tiles are free
     void board::reset()
     {
