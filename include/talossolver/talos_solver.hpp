@@ -23,5 +23,11 @@ namespace talossolver
         bool talos_solve(   talossolver::board board,
                             talossolver::sigils sigils,
                             size_t index);
+
+        // Tries to place a sigil on coordinate cord of the board
+        // Returns true if succesful, otherwhise returns false
+        bool try_place(     talossolver::board board,
+                            talossolver::sigil sigil,
+                            coordinate cord);
     };
 }
