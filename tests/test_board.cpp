@@ -91,12 +91,13 @@ TEST_F(BoardTestSuite, take_test) {
 }
 
 TEST_F(BoardTestSuite, size) {
-    for(unsinged int i = 0; i < 100; i++)
+    for(unsigned int i = 0; i < 100; i++)
     {
         for(unsigned int j = 0; j < 100; j++)
         {
             talossolver::board board(i, j);
-            EXPECT_TRUE(board.size() == {i, j});
+            std::array size = {i, j};
+            EXPECT_EQ(board.size(), size);
         }
     }
 }
