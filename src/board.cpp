@@ -71,11 +71,36 @@ namespace talossolver
 
     const void board::print()
     {
+        // Iterate over all rows
         for(unsigned int r = 0; r < board_map.size(); r++)
         {
             std::cout << "| ";
+            // Iterate over all columns in row
             for(unsigned int c = 0; c < board_map[r].size(); c++)
-                std::cout << board_map[r][c] << " | ";
+            {
+                unsigned int id = board_map[r][c];
+
+                // First case: Spot is empty
+                if(id == 0)
+                {
+                    std::cout << '-' << " | ";
+                    continue;
+                }
+
+                // Second case: Spot is within alphabet range
+                if(id > 0 && id < 26)
+                {
+                    std::cout << char('A' + (id - 1)) << " | ";
+                    continue;
+                }
+
+                // Second case: Spot is out of alphabet range, print number instead
+                if(id > 0 && id < 26)
+                {
+                    std::cout << id - 26 << " | ";
+                    continue;
+                }
+            }
             std::cout << std::endl;
         }
         std::cout << std::endl;
