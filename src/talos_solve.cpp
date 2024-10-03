@@ -17,7 +17,14 @@ namespace talossolver
         return false;
     }
 
-    bool talos_solver::talos_solve(   talossolver::board& board, talossolver::sigils& sigils){return talos_solve(board, sigils, 0);}
+    bool talos_solver::talos_solve(   talossolver::board& board, talossolver::sigils& sigils)
+    {
+        // Check if there is even enough space on the board
+        unsigned int board_size = board.size()[0] * board.size()[1];
+        if(board_size < sigils.size() * 4){return false;}
+
+        return talos_solve(board, sigils, 0);
+    }
 
     bool talos_solver::talos_solve(   talossolver::board& board, talossolver::sigils& sigils, size_t index)
     {
