@@ -24,7 +24,5 @@ namespace talossolver
         private:
         // Represent the sigil as a vector of coordinates
         coordinates cords;
-        // Size of sigil e.g. how much space it takes up on the board
-        const unsigned int size_;
     };
 }
