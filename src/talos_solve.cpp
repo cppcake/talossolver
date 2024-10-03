@@ -58,5 +58,4 @@ namespace talossolver
         return false;
     }
 
-}
-                                
+}                   
