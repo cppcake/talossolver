@@ -1,14 +1,14 @@
 #----------------------------------------------#
-#-----Konfiguration des Buildsystems CMake-----#
+#-----------------CMake Config-----------------#
 #----------------------------------------------#
 
 # Minimale Version des Buildsystems
 cmake_minimum_required(VERSION 3.16)
 # Name des Projekts
-project(ProjectAlpha)
+project(talossolver)
 
 #----------------------------------------------#
-#-------------------Optionen-------------------#
+#-------------------Options--------------------#
 #----------------------------------------------#
 
 # Setzte verwendeten C++-Standard auf C++17
@@ -30,7 +30,7 @@ file(GLOB SRC_FILES
   ${PROJECT_SOURCE_DIR}/src/*.cpp)
 
 #----------------------------------------------#
-#---------------Erzeuge Projekt----------------#
+#----------------Build Project-----------------#
 #----------------------------------------------#
 
 # Baue das Programm 'demo' aus den Quellen
@@ -40,7 +40,6 @@ add_executable(demo
   examples/demo.cpp
   ${SRC_FILES}
 )
-
 
 #----------------------------------------------#
 #----------Download and use GoogleTest---------#
@@ -71,7 +70,7 @@ include(GoogleTest)
 enable_testing()
 
 #----------------------------------------------#
-#-------------Erzeuge Testprogramme------------#
+#------------------Build Tests-----------------#
 #----------------------------------------------#
 
 #Declare test program test_board
@@ -81,3 +80,5 @@ gtest_discover_tests(test_board)
 
 #Declare test program test_sigil
 add_executable(test_sigil tests/test_sigil.cpp ${SRC_FILES})
+target_link_libraries(test_sigil GTest::gtest_main)
+gtest_discover_tests(test_sigil)

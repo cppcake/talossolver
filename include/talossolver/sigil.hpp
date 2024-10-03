@@ -7,9 +7,6 @@ namespace talossolver
     class sigil
     {
         public:
-        // Construct a sigil with given coordinates
-        sigil(const coordinates& cords_) : cords(cords_){};
-
         // Construct a sigil from a template teromino
         sigil(char sigil_id);
 
@@ -22,8 +19,12 @@ namespace talossolver
         // Rotates the sigil by 90° clockwhise
         void rotate();
 
+        const unsigned int size() const;
+
         private:
         // Represent the sigil as a vector of coordinates
         coordinates cords;
+        // Size of sigil e.g. how much space it takes up on the board
+        const unsigned int size_;
     };
 }

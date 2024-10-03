@@ -3,7 +3,7 @@
 namespace talossolver
 {
     // Construct a sigil from a template teromino
-    sigil::sigil(char sigil_id)
+    sigil::sigil(char sigil_id) : size_(4)
     {
         switch(sigil_id)
         {
@@ -48,5 +48,11 @@ namespace talossolver
     {
         for(auto& cord : cords)
             cord = {cord[1], -cord[0]};
+    }
+
+    // Return size of sigil
+    const unsigned int sigil::size() const
+    {
+        return size_;
     }
 }

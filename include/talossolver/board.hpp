@@ -50,8 +50,10 @@ namespace talossolver
         // The board is represented as an n x m Matrix, the board_map.
         // 0 on this matrix means, that the given coordinate is free
         // Any other numbers represents the sigil taken up that coordinate
+        
+        // Vector of length n containing vectors of length m
         std::vector<std::vector<unsigned int>> board_map;
-        unsigned int m;
         unsigned int n;
+        unsigned int m;
     };
 }
