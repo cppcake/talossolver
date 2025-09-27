@@ -9,3 +9,6 @@ Inside the top level of the project folder:
 and then run with
 
 - `./build/demo`
+
+## Algorithm flowchart
+![flowchart](docs/talos_solve_flowchart.png)
