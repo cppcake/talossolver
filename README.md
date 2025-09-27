@@ -12,3 +12,6 @@ and then run with
 
 ## Algorithm flowchart
 ![flowchart](docs/talos_solve_flowchart.png)
+
+## Future work
+In the future a linear programming solution could be implemented and evaluated.
